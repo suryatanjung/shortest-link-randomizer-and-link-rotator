@@ -1,8 +1,5 @@
 <?php 
-// Using array_rand
-header("Location:" . array_rand(["link1", "link2", "link3"]));
-
-// Using rand
+// Link Randomizer
 header("Location:" . ['link1', 'link2', 'link3'][rand(0, 2)]);
 
 // Link Rotator
