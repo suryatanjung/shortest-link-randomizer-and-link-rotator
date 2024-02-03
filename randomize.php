@@ -6,8 +6,8 @@ header("Location:" . array_rand(["link1", "link2", "link3"]));
 header("Location:" . ['link1', 'link2', 'link3'][rand(0, 2)]);
 
 // Link Rotator
-$u = ['link1', 'link2', 'link3'];
+$u = ['https://google.com', 'https://facebook.com', 'https://twitter.com'];
 $f = './count.txt';
-$i = file_exists($f) ? (file_get_contents($f) + 1) % count($u) : 0;
+$i = ((file_exists($f) ? file_get_contents($f) : -1) + 1) % count($u);
 file_put_contents($f, $i);
-header("Location: $u[$i]");
+header("Location:$u[$i]");
