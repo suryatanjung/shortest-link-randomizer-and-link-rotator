@@ -1,5 +1,5 @@
 <?php
-// Link Rotator by github.com/suryatanjung
+// Link Rotator @author github.com/suryatanjung <hi@jung.bz>
 $u = ['link1', 'link2', 'link3'];
 $f = './count.txt';
 $i = ((file_exists($f) ? file_get_contents($f) : -1) + 1) % count($u);
