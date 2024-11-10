@@ -1,0 +1,19 @@
+<?php
+// Link Rotator with WordPress Database @author github.com/suryatanjung <hi@jung.bz>
+
+// Define the links to rotate through
+$u = ['link1', 'link2', 'link3'];
+
+// Retrieve the counter value from the database
+$counter = get_option('link_rotator_counter', 0);
+
+// Calculate the index and increment the counter for the next access
+$i = $counter % count($u);
+$next_counter = $counter + 1;
+
+// Update the counter in the database
+update_option('link_rotator_counter', $next_counter);
+
+// Redirect to the selected link
+header("Location: {$u[$i]}");
+exit;
